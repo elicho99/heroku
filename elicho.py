@@ -122,7 +122,7 @@ def main():
                       url_path=TOKEN) 
   
    # dp.add_handler([MessageHandler(Filters.document, photo), CommandHandler('send', photo)] )
-    updater.bot.set_webhook("https://<python-telegram-bot-heroku2>.herokuapp.com/" + TOKEN)
+    updater.bot.set_webhook("https://still-cove-84582.herokuapp.com/" + TOKEN)
     #updater.idle()
 
     # log all errors
