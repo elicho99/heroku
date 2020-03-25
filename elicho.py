@@ -113,9 +113,17 @@ def main():
     ttt_handler = MessageHandler(Filters.document,photo)
     dp.add_handler(ttt_handler)  
     
-    
+    TOKEN = "634656340:AAFL43JVLRzmLdwDFcqkw4jC1gN1l1UTeHg"
+    PORT = int(os.environ.get('PORT', '8443'))
+    updater = Updater(TOKEN)
+    # add handlers
+    updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=TOKEN) 
   
    # dp.add_handler([MessageHandler(Filters.document, photo), CommandHandler('send', photo)] )
+    updater.bot.set_webhook("https://<python-telegram-bot-heroku2>.herokuapp.com/" + TOKEN)
+    #updater.idle()
 
     # log all errors
     dp.add_error_handler(error)
