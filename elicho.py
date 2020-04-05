@@ -106,7 +106,7 @@ def echo(bot, update):
 
 
 def main():
-    updater = Updater("634656340:AAFL43JVLRzmLdwDFcqkw4jC1gN1l1UTeHg", use_context=True)
+    updater = Updater("634656340:AAFL43JVLRzmLdwDFcqkw4jC1gN1l1UTeHg")
 
     dp = updater.dispatcher
 
