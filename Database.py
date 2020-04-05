@@ -9,7 +9,7 @@ class Database(object):
         self.myDatabase = mysql.connector.connect(
             host="localhost",
             user="root",
-            passwd='Eliyas@5799',
+            passwd='',
             database="eli_db2"
         )
         self.my_cursor = self.myDatabase.cursor()
