@@ -1,5 +1,5 @@
-telegram
-python-telegram-bot==11.1.0
-pyTelegramBotAPI==3.6.7
-requests==2.22.0
-logging
+certifi==2020.4.5.1
+chardet==3.0.4
+idna==2.9
+requests==2.23.0
+urllib3==1.25.9
