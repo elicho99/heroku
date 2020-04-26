@@ -39,7 +39,7 @@ def start(update, context):
 
 
 def ass_doc(bot, update):
-    if update.message.chat_id != 207887144:
+    if update.message.chat_id != Eli:
         
         chat_id = update.message.chat_id
         user = update.message.from_user
