@@ -46,9 +46,9 @@ def ass_doc(bot, update):
         user_name = str(user.first_name)
         
 
-        bot.send_message(chat_id=207887144, text=user_name + " sent")
+        bot.send_message(chat_id=Eli, text=user_name + " sent")
 
-        bot.send_document(chat_id=207887144, document=update.message.document)
+        bot.send_document(chat_id=Eli, document=update.message.document)
 
         update.message.reply_text('document sent')
 
