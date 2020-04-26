@@ -1,7 +1,7 @@
 
 
 
-
+import sys
 import requests
 import os
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
@@ -38,20 +38,19 @@ def start(update, context):
 
 
 
-def ass_doc(bot, update):
-    if update.message.chat_id != Eli:
+def ass_doc(update, context):
+    
         
-        chat_id = update.message.chat_id
-        user = update.message.from_user
-        user_name = str(user.first_name)
-        
+	chat_id = update.message.chat_id
+	user = update.message.from_user
+	user_name = str(user.first_name)
 
-        bot.send_message(chat_id=Eli, text=user_name + " sent")
 
-        bot.send_document(chat_id=Eli, document=update.message.document)
+	context.bot.send_message(chat_id=Eli, text=user_name + " sent")
 
-        update.message.reply_text('document sent')
+	context.bot.send_document(chat_id=Eli, document=update.message.document)
 
+	update.message.reply_text('document sent')
 
 
 
