@@ -3,4 +3,6 @@ chardet==3.0.4
 idna==2.9
 requests==2.23.0
 urllib3==1.25.9
-mysql-connector==2.2.9
+pandas==0.24.2
+python-telegram-bot==12.4.2
+

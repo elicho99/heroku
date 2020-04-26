@@ -1,7 +1,7 @@
-#from Database import Database
 
-import pandas as pd
-import logging
+
+
+
 import requests
 import os
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
@@ -22,7 +22,7 @@ elif mode == "prod":
                               url_path=TOKEN)
         updater.bot.set_webhook("https://{}.herokuapp.com/{}".format(HEROKU_APP_NAME, TOKEN))
 else:
-    logger.error("No MODE specified!")
+    
     sys.exit(1)
 
 
@@ -31,7 +31,7 @@ def start(bot, update):
     #chat_id = update.message.chat_id
     user = update.message.from_user
     user_name = str(user.first_name)
-    eli.add_user(chat_id, user_name)
+    
     update.message.reply_text('Hello '+user_name )
 
 
