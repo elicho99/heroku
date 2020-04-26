@@ -91,6 +91,21 @@ def LAST(update, context):
     return ConversationHandler.END
 
 
+def ass_doc(bot, update):
+    if update.message.chat_id != 207887144:
+        
+        chat_id = update.message.chat_id
+        user = update.message.from_user
+        user_name = str(user.first_name)
+        
+
+        bot.send_message(chat_id=207887144, text=user_name + " sent")
+
+        bot.send_document(chat_id=207887144, document=update.message.document)
+
+        update.message.reply_text('document sent')
+
+
 
 
 def echo(bot, update):
@@ -123,7 +138,8 @@ def main():
  
     dp.add_handler(MessageHandler(Filters.text, echo))
 
-    
+    ttt_handler = MessageHandler(Filters.document, ass_doc)
+    dp.add_handler(ttt_handler)
 
    
     updater.start_polling()
