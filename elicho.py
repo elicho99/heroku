@@ -67,11 +67,12 @@ def main():
     
     dp.add_handler(CommandHandler("send", ass_doc))
  
-    dp.add_handler(MessageHandler(Filters.text, echo))
+    
 
     ttt_handler = MessageHandler(Filters.document, ass_doc)
     dp.add_handler(ttt_handler)
 
+    dp.add_handler(MessageHandler(Filters.text, echo))
    
     updater.start_polling()
 
