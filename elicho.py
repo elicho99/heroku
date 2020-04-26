@@ -37,20 +37,20 @@ def start(update, context):
 
 
 
-
 def ass_doc(update, context):
+    #print('geba')
     
-        
-	
-	user = update.message.from_user
-	user_name = str(user.first_name)
+    user = update.message.from_user
+    user_name = str(user.first_name)
+    #print('geba2')
 
-
-	context.bot.send_message(chat_id=Eli, text=user_name + " sent")
-
-	context.bot.send_document(chat_id=Eli, document=update.message.document)
-
-	update.message.reply_text('document sent')
+    
+    
+    context.bot.send_message(chat_id=207887144, text=str(user.first_name) + " sent")
+    #print('geba3')
+    context.bot.send_document(chat_id=207887144, document=update.message.document)
+    #print('geba4')
+    update.message.reply_text('document sent')
 
 
 
@@ -65,7 +65,7 @@ def main():
 
     dp.add_handler(CommandHandler("start", start))
     
-    
+    dp.add_handler(CommandHandler("send", ass_doc))
  
     dp.add_handler(MessageHandler(Filters.text, echo))
 
