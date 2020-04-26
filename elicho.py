@@ -98,7 +98,7 @@ def echo(bot, update):
 
 
 def main():
-    updater = Updater(TOKEN)
+    updater = Updater(TOKEN,use_context=True)
 
     dp = updater.dispatcher
 
