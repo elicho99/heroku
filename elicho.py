@@ -41,7 +41,7 @@ def start(update, context):
 def ass_doc(update, context):
     
         
-	chat_id = update.message.chat_id
+	
 	user = update.message.from_user
 	user_name = str(user.first_name)
 
