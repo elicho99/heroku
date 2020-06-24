@@ -1,12 +1,11 @@
 
 
 
-import sys
+
 import requests
 import os
 from telegram.ext import (Updater, CommandHandler, MessageHandler, Filters,
                           ConversationHandler)
-from telegram import (ReplyKeyboardMarkup, ReplyKeyboardRemove)
 
 mode = os.getenv("MODE")
 TOKEN = os.getenv("TOKEN")
@@ -26,31 +25,25 @@ else:
     
     sys.exit(1)
 
-SECTION,Fname,ID ,LAST= range(4)
 
-
-def start(update, context):
+def start(bot, update):
+    #eli = Database()
+    #chat_id = update.message.chat_id
     user = update.message.from_user
     user_name = str(user.first_name)
-    update.message.reply_text("Hello "+user_name+" send your assignment.")
-
-
-
-
-def ass_doc(update, context):
-    #print('geba')
     
-    user = update.message.from_user
-    user_name = str(user.first_name)
-    #print('geba2')
+    update.message.reply_text('Hello '+user_name )
 
-    
-    
-    context.bot.send_message(chat_id=207887144, text=str(user.first_name) + " sent")
-    #print('geba3')
-    context.bot.send_document(chat_id=207887144, document=update.message.document)
-    #print('geba4')
-    update.message.reply_text('document sent')
+
+
+
+def help(bot, update):
+    update.message.reply_text('Help!')
+
+
+def doc(bot, update):
+    update.message.reply_text('Please Visit https://github.com/elicho99/cPlusPlus_LAB/')
+
 
 
 
@@ -59,20 +52,18 @@ def echo(bot, update):
 
 
 def main():
-    updater = Updater(TOKEN,use_context=True)
+    updater = Updater(TOKEN)
 
     dp = updater.dispatcher
 
     dp.add_handler(CommandHandler("start", start))
-    
-    dp.add_handler(CommandHandler("send", ass_doc))
+    dp.add_handler(CommandHandler("help", help))
+    dp.add_handler(CommandHandler("files", doc))
  
+    dp.add_handler(MessageHandler(Filters.text, echo))
+
     
 
-    ttt_handler = MessageHandler(Filters.document, ass_doc)
-    dp.add_handler(ttt_handler)
-
-    dp.add_handler(MessageHandler(Filters.text, echo))
    
     updater.start_polling()
 
